@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --custom-blue: #4758EF;
+  --custom-purple: #703C6D;
+  --color-principal: #4b4fa6;
+  --color-secundario: #fc7e09;
+  --color-fondo: #eaeef7;
+  --color-fondo-secundary: #ffff;
+
+  /* sub menu */
+  --bg-submenu: #424D8C;
+  --bg-submenu-claro: #f7f2fa;
+  --color-boton-submenu: #ffff;
+  --hover-boton-submenu: #788BF9AD;
+  --color-fuente1-submenu: #fc7e09;
+  --color-fuente2-submenu: #ffff;
+  --color-fuente3-submenu: #333;
+  --bg-form: #EAE8E8;
+}
+
+.gradient {
+  background: rgb(62, 65, 136);
+  background: linear-gradient(0deg,
+      rgba(62, 65, 136, 1) 0%,
+      rgba(48, 49, 75, 1) 100%);
+}
+
+.gradient-secundario {
+  background: rgb(64, 53, 53);
+  background: linear-gradient(0deg,
+      rgba(64, 53, 53, 1) 0%,
+      rgba(200, 107, 20, 1) 100%);
+}
+
+@layer components {
+  .subPerfil .active {
+    background-color: var(--bg-submenu);
+    color: var(--color-fondo);
+  }
+
+  .inputBgCard {
+    color: white;
+    background-color: rgba(59, 130, 246, 0.6);
+    /* bg-blue-600 with 60% opacity */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    /* shadow-md */
+    backdrop-filter: blur(4px);
+    /* backdrop-blur-md */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* border-2 with 20% opacity */
+    padding: 0.25rem;
+  }
+
+  .inputBgCard::placeholder {
+    color: #fff;
+  }
+
+  .nav_item {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgb(255, 128, 0);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    transform: translateX(-100%)
+  }
+
+  .nav_item.open {
+    transform: translateX(0);
+  }
+
+  .nav_toggle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .nav_toggle span {
+    width: 26px;
+    height: 4px;
+    background: var(--hover-boton-submenu);
+    margin-bottom: 3px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+
+  .nav_toggle.open>span {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+
+  .nav_toggle.open>span:nth-child(2) {
+    display: none;
+  }
+
+  .nav_toggle.open>span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+
+}
